@@ -35,7 +35,14 @@ export class AuthServicio {
   }
   isAuthenticated():boolean {
     const token=this.getToken();
-    return token ? this.jwtHelper.isTokenExpired(token):false;
+   if (!token) {
+      console.log('❌ No hay token');
+      return false;
+    }
+
+    const expired = this.jwtHelper.isTokenExpired(token);
+    console.log('¿Token expirado?', expired);
+    return !expired; // ✅ true si el token sigue vigente
   }
   getUsuarioInfo(): any{
     const token=this.getToken();
