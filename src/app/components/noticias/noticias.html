@@ -1,0 +1,30 @@
+<div class="noticias">
+  <div *ngFor="let noticia of noticiasPaginadas" class="noticia">
+    <h3>{{ noticia.nombre }}</h3>
+    <p>
+      {{ mostrarResumen(noticia.descripcion) }}
+      <span *ngIf="noticia.descripcion.length > resumenLength">
+        ... <a href="#" (click)="verNoticiaCompleta(noticia, $event)">Leer más</a>
+      </span>
+    </p>
+    <small>{{ noticia.fecha }}</small>
+    <img [src]="noticia.urlImagen" alt="{{ noticia.nombre }}">
+  </div>
+</div>
+
+<!-- Mostrar paginación solo si hay más de una página -->
+<div class="paginacion" *ngIf="totalPaginas > 1">
+  <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Anterior</button>
+  <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+  <button (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas">Siguiente</button>
+</div>
+
+<!-- Modal para noticia completa -->
+<div class="modal" *ngIf="noticiaSeleccionada">
+  <div class="modal-content">
+    <h2>{{ noticiaSeleccionada.nombre }}</h2>
+    <p>{{ noticiaSeleccionada.descripcion }}</p>
+    <small>{{ noticiaSeleccionada.fecha }}</small>
+    <button (click)="cerrarModal()">Cerrar</button>
+  </div>
+</div>

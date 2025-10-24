@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <div class="logo">Mi Sitio</div>
+  <button class="menu-toggle" (click)="menuAbierto = !menuAbierto">
+    ☰
+  </button>
+  <ul [class.open]="menuAbierto">
+    <li *ngFor="let menu of menus">
+      <a [href]="menu.url">{{ menu.nombre }}</a>
+    </li>
+  </ul>
+</nav>
