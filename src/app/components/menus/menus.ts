@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from '../../models/Menu';
 import { MenuServicio } from '../../servicio/menu-servicio';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-menus',
   templateUrl: './menus.html',
   styleUrl: './menus.css',
-  imports: [CommonModule]
+  imports: [CommonModule, RouterLink]
 })
 export class Menus implements OnInit{
   menus:Menu[]=[];

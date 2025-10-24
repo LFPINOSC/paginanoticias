@@ -1,0 +1,7 @@
+<div>
+    <h2>Inicio de sesion</h2>
+    <input [(ngModel)]="username" placeholder="Ingese de nombre" />
+    <input [(ngModel)]="password" type="password" placeholder="Ingese de nombre" />
+    <button (click)="login()">Entrar</button>
+    <p *ngIf="error">{{error}}</p>
+</div>
