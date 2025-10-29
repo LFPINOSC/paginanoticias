@@ -1,1 +1,21 @@
-<p>dasboard works!</p>
+<div *ngIf="showDashboard" class="dashboard">
+  <h2>Dashboard de Noticias</h2>
+
+  <div class="estadisticas">
+    <p>Total de noticias: {{ totalNoticias }}</p>
+  </div>
+
+  <div style="display: block; width: 80%; margin: auto;">
+    <canvas baseChart
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="{ responsive: true }"
+            [legend]="true"
+            [type]="'bar'">
+    </canvas>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+

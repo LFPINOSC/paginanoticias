@@ -10,7 +10,6 @@ export class AuthGuardo implements CanActivate{
     constructor(private authServicio: AuthServicio,private router:Router){}
     canActivate(): boolean {
         if(!this.authServicio.isAuthenticated()){
-            console.log('hola')
             this.router.navigate(['/login']);
             return false;
         }

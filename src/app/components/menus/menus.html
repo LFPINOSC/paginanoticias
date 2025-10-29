@@ -1,14 +1,39 @@
-<nav class="navbar">
-  <div class="logo">Mi Sitio</div>
-  <button class="menu-toggle" (click)="menuAbierto = !menuAbierto">
-    ☰
-  </button>
-  <ul [class.open]="menuAbierto">
-    <li *ngFor="let menu of menus">
-      <a [href]="menu.url">{{ menu.nombre }}</a>
-    </li>
-    <li>
-      <a href="login">Login</a>
-    </li> 
-  </ul>
+<nav>
+  <ng-container *ngIf="isLoggedIn$ | async; else isLogin">
+    
+    <nav class="navbar">
+      <div class="logo">Mi Sitio</div>
+      <button class="menu-toggle" (click)="menuAbierto = !menuAbierto">
+        ☰
+      </button>
+      <ul [class.open]="menuAbierto">
+        <li><a [routerLink]="['/dasboard/fromNoticia']">Ingreso Noticias</a></li>
+        <li><a [routerLink]="['/dasboard/listNoticia']">Listar Noticias</a></li>
+        <li><a (click)="cerrarSession()">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </ng-container>
+    
+  <ng-template #isLogin>
+    <nav class="navbar">
+      <div class="logo">Mi Sitio</div>
+      <button class="menu-toggle" (click)="menuAbierto = !menuAbierto">
+        ☰
+      </button>
+      <ul [class.open]="menuAbierto">
+        <li *ngFor="let menu of menus">
+          <a [href]="menu.url">{{ menu.nombre }}</a>
+        </li>
+        <li>
+          <a href="login">Login</a>
+        </li> 
+      </ul>
+    </nav>
+  </ng-template>
 </nav>
+
+ 
+
+
+
+

@@ -1,1 +1,36 @@
-<p>list-noticia works!</p>
+<div class="list-noticia">
+  <h2>Lista de Noticias</h2>
+  
+  <button (click)="crearNoticia()">Crear Noticia</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let noticia of noticiasPaginadas">
+        <td>{{ noticia.id }}</td>
+        <td>{{ noticia.nombre }}</td>
+        <td>{{ noticia.fecha }}</td>
+        <td>{{ noticia.descripcion }}</td>
+        <td>
+          <button (click)="editarNoticia(noticia)">Editar</button>
+          <button (click)="eliminarNoticia(noticia.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="paginacion">
+    <button (click)="anteriorPagina()" [disabled]="page === 1">Anterior</button>
+    <span>Página {{ page }} de {{ totalPages }}</span>
+    <button (click)="siguientePagina()" [disabled]="page === totalPages">Siguiente</button>
+  </div>
+</div>
+

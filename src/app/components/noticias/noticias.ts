@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NoticiaServicio } from '../../servicio/noticia-servicio';
-import { Noticia } from '../../models/Notocia';
+import { Noticia } from '../../models/Noticia';
 
 @Component({
   selector: 'app-noticias',
@@ -19,18 +19,18 @@ export class Noticias implements OnInit{
   noticiaSeleccionada: any = null;
   constructor(private servicioNoticia:NoticiaServicio){}
   ngOnInit(): void {
-  this.servicioNoticia.obtenerNoticias().subscribe({
-    next: data => {
-      this.noticias = data;
-      this.noticias.sort((a, b) => a.id - b.id);
-      console.log(data)
-      this.totalPaginas = Math.ceil(this.noticias.length / this.noticiasPorPagina);
-      this.paginaActual = 1; 
-      this.cargarPagina();
-    },
-    error: err => console.log("Error al cargar noticias", err)
-  });
-}
+    this.servicioNoticia.obtenerNoticias().subscribe({
+      next: data => {
+        this.noticias = data;
+        this.noticias.sort((a, b) => a.id! - b.id!);
+        console.log(data)
+        this.totalPaginas = Math.ceil(this.noticias.length / this.noticiasPorPagina);
+        this.paginaActual = 1; 
+        this.cargarPagina();
+      },
+      error: err => console.log("Error al cargar noticias", err)
+    });
+  }
   cargarPagina() {
     const inicio = (this.paginaActual - 1) * this.noticiasPorPagina;
     const fin = inicio + this.noticiasPorPagina;

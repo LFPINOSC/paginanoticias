@@ -1,1 +1,23 @@
-<p>from-noticia works!</p>
+<div class="form-noticia">
+  <h2>{{ editMode ? 'Editar Noticia' : 'Crear Noticia' }}</h2>
+
+  <form (ngSubmit)="guardarNoticia()">
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="noticia.nombre" name="nombre" required>
+
+    <label>Fecha:</label>
+    <input type="date" [(ngModel)]="noticia.fecha" name="fecha" required>
+
+    <label>Descripción:</label>
+    <textarea [(ngModel)]="noticia.descripcion" name="descripcion" required></textarea>
+
+    <label>URL Imagen:</label>
+    <input type="text" [(ngModel)]="noticia.urlImagen" name="urlImagen">
+
+    <div class="botones">
+      <button type="submit">{{ editMode ? 'Actualizar' : 'Crear' }}</button>
+      <button type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>
+

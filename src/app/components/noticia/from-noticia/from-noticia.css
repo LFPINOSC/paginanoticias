@@ -1,0 +1,35 @@
+.form-noticia {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.botones {
+  margin-top: 15px;
+}
+
+button {
+  padding: 6px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
