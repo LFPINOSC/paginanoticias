@@ -6,6 +6,7 @@ import {  DasboardComponent } from './components/dasboard/dasboard';
 import { AuthGuardo } from './autetificacion/authGuardar';
 import { ListNoticia } from './components/noticia/list-noticia/list-noticia';
 import { FromNoticia } from './components/noticia/from-noticia/from-noticia';
+import { FromEmprese } from './components/dasboard/from-emprese/from-emprese';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/inicio.html', pathMatch: 'full' },
@@ -20,6 +21,7 @@ export const routes: Routes = [
             { path: 'listNoticia', component: ListNoticia },
             { path: 'fromNoticia', component: FromNoticia },
             { path: 'fromNoticia/:id', component: FromNoticia },
+            { path: 'fromEmpresa', component: FromEmprese },
         ]
     },
 ];

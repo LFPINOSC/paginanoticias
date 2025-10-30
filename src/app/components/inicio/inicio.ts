@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Empresa } from '../../models/Empresa';
 
 @Component({
   selector: 'app-inicio',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './inicio.html',
-  styleUrl: './inicio.css'
+  styleUrls: ['./inicio.css']
 })
-export class Inicio {
+export class Inicio implements OnInit {
+  empresaActiva: Empresa | null = null;
 
+  ngOnInit(): void {
+    const empresaStr = localStorage.getItem('empresaActiva');
+    if (empresaStr) {
+      this.empresaActiva = JSON.parse(empresaStr);
+    }
+  }
 }

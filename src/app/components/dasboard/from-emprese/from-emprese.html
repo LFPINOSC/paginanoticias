@@ -1,0 +1,42 @@
+<div class="empresa-container" *ngIf="!cargando; else cargandoTpl">
+  <h2>Configuración de la Empresa</h2>
+
+  <form [formGroup]="empresaForm" (ngSubmit)="guardar()">
+
+    <div class="form-group">
+      <label>Nombre:</label>
+      <input type="text" formControlName="nombre" class="form-control" />
+      <small *ngIf="empresaForm.get('nombre')?.invalid && empresaForm.get('nombre')?.touched">
+        El nombre es obligatorio y debe tener entre 2 y 100 caracteres
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Visión:</label>
+      <textarea formControlName="vision" rows="3" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Misión:</label>
+      <textarea formControlName="mision" rows="3" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Logo (URL):</label>
+      <input type="text" formControlName="urlLogo" class="form-control" />
+      <img *ngIf="empresaForm.value.urlLogo" [src]="empresaForm.value.urlLogo" alt="Logo" height="80" />
+    </div>
+
+    <div class="form-group">
+      <label><input type="checkbox" formControlName="activa" /> Empresa Activa</label>
+    </div>
+
+    <button type="submit" class="btn-guardar" [disabled]="empresaForm.invalid">Guardar</button>
+  </form>
+
+  <p class="mensaje">{{ mensaje }}</p>
+</div>
+
+<ng-template #cargandoTpl>
+  <p>Cargando información de la empresa...</p>
+</ng-template>

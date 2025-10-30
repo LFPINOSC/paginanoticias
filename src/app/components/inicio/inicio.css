@@ -1,0 +1,39 @@
+.inicio-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff5f5;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #e57373;
+  text-align: center;
+  color: #333;
+}
+
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.encabezado h1 {
+  color: #b71c1c;
+  margin-top: 10px;
+}
+
+.seccion {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.seccion h2 {
+  color: #d32f2f;
+  border-bottom: 2px solid #e57373;
+  padding-bottom: 5px;
+}
+
+.seccion p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}

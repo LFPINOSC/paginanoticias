@@ -1,2 +1,27 @@
 
-<p>inicio works!</p>
+<div class="inicio-container" *ngIf="empresaActiva; else noEmpresa">
+  <div class="encabezado">
+    <img
+      *ngIf="empresaActiva.urlLogo"
+      [src]="empresaActiva.urlLogo"
+      alt="Logo"
+      height="80"
+    />
+    <h1>{{ empresaActiva.nombre }}</h1>
+  </div>
+
+  <section class="seccion">
+    <h2>🌟 Visión</h2>
+    <p>{{ empresaActiva.vision }}</p>
+  </section>
+
+  <section class="seccion">
+    <h2>🎯 Misión</h2>
+    <p>{{ empresaActiva.mision }}</p>
+  </section>
+</div>
+
+<ng-template #noEmpresa>
+  <p>No hay empresa activa registrada.</p>
+</ng-template>
+

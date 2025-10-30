@@ -1,0 +1,50 @@
+.empresa-container {
+  max-width: 600px;
+  margin: 30px auto;
+  background: #fff5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #e57373;
+}
+
+h2 {
+  color: #b71c1c;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e57373;
+  border-radius: 6px;
+}
+
+.btn-guardar {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-guardar:disabled {
+  background: #ef9a9a;
+  cursor: not-allowed;
+}
+
+.mensaje {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
