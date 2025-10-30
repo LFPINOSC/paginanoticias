@@ -1,0 +1,27 @@
+.footer {
+  background-color: #111827; /* gris oscuro */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas */
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.footer-col p {
+  margin: 8px 0;
+}
+
+/* Responsivo: una columna en pantallas pequeñas */
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}

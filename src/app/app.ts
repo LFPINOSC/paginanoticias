@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AuthServicio } from './servicio/auth-servicio';
 import { Empresa } from './models/Empresa';
 import { EmpresaService } from './servicio/empresa-servicio';
+import { FooterComponentTs } from './components/footer.component.ts/footer.component.ts';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { EmpresaService } from './servicio/empresa-servicio';
     RouterOutlet,
     Menus,
     CommonModule,
-],
+    FooterComponentTs,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

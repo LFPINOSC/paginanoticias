@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from '../../models/Menu';
 import { MenuServicio } from '../../servicio/menu-servicio';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterModule } from "@angular/router";
+import { Router,  RouterModule } from "@angular/router";
 import { AuthServicio } from '../../servicio/auth-servicio';
 import { Observable } from 'rxjs';
 import { Empresa } from '../../models/Empresa';
